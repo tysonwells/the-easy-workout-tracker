@@ -22,6 +22,7 @@ import { passUserToView } from './middleware/middleware.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as profilesRouter } from './routes/profiles.js'
+import {router as exercisesRouter } from './routes/exercises.js'
 
 // create the express app
 const app = express()
@@ -65,6 +66,7 @@ app.use(passUserToView)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
+app.use('/exercises', exercisesRouter)
 
 // custom middleware
 
