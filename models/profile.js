@@ -1,9 +1,17 @@
 import mongoose from 'mongoose'
 
-const Schema = mongoose.Schema
 
-const exerciseSchema = new mongoose.Schema({
+const workoutSchema = new mongoose.Schema({
   name: String,
+  category: {
+    type: String,
+    enum: ['Back Workout', 'Leg Workout', 'Arm Workout']
+  },
+  day: {
+    type: String,
+    enum: ['Monday', 'Wednesday', 'Friday']
+  },
+exercises: [{type: mongoose.Schema.Types.ObjectId, ref: 'Exercise'}]
 }, {
   timestamps: true
 })
@@ -14,7 +22,7 @@ const exerciseSchema = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  exercise: [exerciseSchema]
+  workouts: [workoutSchema]
 }, {
   timestamps: true
 })
