@@ -4,8 +4,9 @@ import * as profilesCtrl from '../controllers/profiles.js'
 
 const router = Router()
 
-router.get('/', isLoggedIn, profilesCtrl.index)
-router.get('/new', isLoggedIn, profilesCtrl.new)
+router.get("/", isLoggedIn, profilesCtrl.index)
+
+router.post("/:id/exercise", isLoggedIn, profilesCtrl.createExercise)
 
 export {
   router

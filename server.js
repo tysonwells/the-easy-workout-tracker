@@ -14,6 +14,10 @@ import('./config/database.js')
 // load passport
 import('./config/passport.js')
 
+// connect to middleware
+import { passUserToView } from './middleware/middleware.js'
+
+
 // require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
@@ -60,6 +64,9 @@ app.use(passport.session())
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
+
+// custom middleware
+app.use(passUserToView)
 
 
 // catch 404 and forward to error handler
