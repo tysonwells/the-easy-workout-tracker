@@ -59,6 +59,7 @@ app.use(
 // passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(passUserToView)
 
 // router middleware
 app.use('/', indexRouter)
@@ -66,7 +67,6 @@ app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
 
 // custom middleware
-app.use(passUserToView)
 
 
 // catch 404 and forward to error handler

@@ -6,7 +6,9 @@ const router = Router()
 
 router.get("/", isLoggedIn, profilesCtrl.index)
 
-router.post("/:id/exercise", isLoggedIn, profilesCtrl.createExercise)
+router.get('/:id', isLoggedIn, profilesCtrl.show)
+
+// router.post("/:id/exercise", isLoggedIn, profilesCtrl.createExercise)
 
 export {
   router

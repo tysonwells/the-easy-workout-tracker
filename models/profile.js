@@ -9,10 +9,12 @@ const exerciseSchema = new mongoose.Schema({
 })
 
 
+
+
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  exercises: [exerciseSchema]
+  exercise: [exerciseSchema]
 }, {
   timestamps: true
 })
