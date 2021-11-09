@@ -13,9 +13,12 @@
      <button type="submit">Add</button>
    </form>
   <% } %>
+  <h2>All Exercises</h2>
   <ul>
     <% exercises.forEach(exercise => { %>
-      <li><%= exercise.name %> </li>
+      <li>
+        <a href="/exercises/<%= exercise._id %> "><%= exercise.name %></a>
+      </li>
     <% }) %>
   </ul>
 </section>

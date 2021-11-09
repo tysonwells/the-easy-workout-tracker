@@ -8,8 +8,6 @@ router.get("/", isLoggedIn, exercisesCtrl.index)
 
 router.get('/:id', isLoggedIn, exercisesCtrl.show)
 
-router.get("/new", isLoggedIn, exercisesCtrl.new)
-
 router.post("/", isLoggedIn, exercisesCtrl.create)
 
 // router.post("/:id/exercise", isLoggedIn, exercisesCtrl.createExercise)

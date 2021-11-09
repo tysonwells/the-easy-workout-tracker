@@ -28,19 +28,25 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  console.log('Working!')
+  Exercise.findById(req.params.id)
+  .populate('owner')
+  .then(exercise => {
+    res.render('exercises/show', {
+      exercise,
+      title: 'show'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/exercises')
+  })
 }
 
-function newExercise(req,res) {
-  res.render('exercises/new', {
-    title: 'New Exercies'
-  })  
-}
+
 
 
 export {
 index,
 show,
-newExercise as new,
 create,
 }
