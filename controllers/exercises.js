@@ -15,6 +15,18 @@ function index(req, res){
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  Exercise.create(req.body)
+  .then(exercise => {
+    res.redirect('/exercises')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/exercises')
+  })
+}
+
 function show(req, res) {
   console.log('Working!')
 }
@@ -25,16 +37,6 @@ function newExercise(req,res) {
   })  
 }
 
-function create(req, res) {
-  console.log('Jesus!')
-    Exercise.create(req.body, function(error, exercise){
-    if (error) {
-      console.log(error)
-      return res.redirect("/exercises/new")
-    }
-    res.redirect(`/exercises/${exercise._id}`)
-  })
-}
 
 export {
 index,

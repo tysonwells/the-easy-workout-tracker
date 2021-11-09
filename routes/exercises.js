@@ -10,7 +10,7 @@ router.get('/:id', isLoggedIn, exercisesCtrl.show)
 
 router.get("/new", isLoggedIn, exercisesCtrl.new)
 
-router.post("/", exercisesCtrl.create)
+router.post("/", isLoggedIn, exercisesCtrl.create)
 
 // router.post("/:id/exercise", isLoggedIn, exercisesCtrl.createExercise)
 
