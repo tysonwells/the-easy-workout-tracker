@@ -1,8 +1,22 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
-
-</main>
+<section>
+  <h1>Exercises</h1>
+  <% if (user) { %>
+   <h2> Add Exercise</h2>
+   <form action="/exercises" method="POST">
+     <label>
+       Name:
+       <input type="text" name="name" autocomplete="off">
+     </label>
+   </form>
+  <% } %>
+  <ul>
+    <% exercises.forEach(exercise => { %>
+      <li><%= exercise.name %> </li>
+    <% }) %>
+  </ul>
+</section>
 
 <%- include('../partials/footer') %>
