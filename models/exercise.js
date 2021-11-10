@@ -11,7 +11,6 @@ const exerciseSchema = new Schema({
   set: Number,
   weight: Number,
   notes: String,
-  date: {type: Date, default: Date.now},
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true

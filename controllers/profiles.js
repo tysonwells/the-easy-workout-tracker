@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Exercise } from '../models/exercise.js'
 
 function index(req, res) {
   console.log(req.user)
@@ -40,25 +41,44 @@ function createExercise(req, res) {
   console.log('PROFILE ID',req.user.profile._id)
 }
 
-// function createExercise(req, res) {
-//   console.log(req.body)
+function createWorkout(req, res) {
+  Profile.findById(req.params.id)
+  .then((profile) => {
+    console.log(profile)
+    console.log(req.body)
+    profile.workouts.push(req.body)
+    profile.save().then(function() {
+      res.redirect(`/profiles/${profile._id}`)
+    })
+  })
+}
+
+function showWorkout(req, res) {
+  console.log('show workout')
+  console.log(req.params.profileId)
+  console.log(req.params.workoutId)
+  Profile.findById(req.params.profileId)
+  .then((profile) => {
+    const myWorkout = profile.workouts.find(workout => {
+      return workout._id.equals(req.params.workoutId)
+    })
+  Exercise.find({}).then(function(exercises) {
+    res.render('profiles/workout',{
+      workout:myWorkout,
+      title: 'Workout',
+      exercises: exercises
+    })
+
+  })
+  }) 
   
-  // Profile.findById(req.user.profile._id)
-  // .then(profile => {
-  //   profile.exercise.push(req.body)
-  //   profile.save()
-  //   .then(() => {
-  //     res.redirect(`/profiles/${req.user.profile._id}`)
-  //   })
-  // })
-  // .catch(err => {
-  //   console.log(err)
-  //   res.redirect(`/profiles/${req.user.profile._id}`)
-  // })
-// }
+
+}
 
 export {
   index,
   show,
   createExercise,
+  createWorkout,
+  showWorkout
 }

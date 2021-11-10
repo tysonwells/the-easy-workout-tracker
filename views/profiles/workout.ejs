@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= workout.name %> </h1>
+  <p> <%= workout.category %> </p>
+  <p> <%= workout.day %> </p>
+  <section>
+  <form action="/profiles/<%= user.profile._id%>/workouts/<%= workout._id %>/exercises" method="POST">
+    <select name="exerciseId">
+      <% exercises.forEach(exercise => { %>
+        <option value="<%= exercise._id %> "><%= exercise.name %> </option>
+      <% }) %>
+    </select>
+    <button type="submit">Add Exercise</button>
+  </form>
+
+  </section>
+  
+</main>
+
+<%- include('../partials/footer') %>

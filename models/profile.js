@@ -7,8 +7,11 @@ const workoutSchema = new mongoose.Schema({
     type: String,
     enum: ['Back Workout', 'Leg Workout', 'Arm Workout']
   },
+
+
   day: {
-    type: Date
+    type: Date,
+    default: new Date()
   },
 exercises: [{type: mongoose.Schema.Types.ObjectId, ref: 'Exercise'}]
 }, {

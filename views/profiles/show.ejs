@@ -14,19 +14,23 @@
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
     <h2>Add Workout</h2>
-    <form action="/profiles/<%= profile._id %>/workouts" method="POST">
-    
-       
+    <form action="/profiles/<%= profile._id %>/workouts" method="POST">       
         <input type="text" name="name" placeholder='Name 'autocomplete="off">
         <select name="category">
           <option value="Back Workout">Back Workout</option>
           <option value="Leg Workout">Leg Workout</option>
-          <option value="Arm Workout">Arm Workout</option>          
+          <option value="Arm Workout">Arm Workout</option>                    
         </select>
-        <input type="datetime-local">
-     
+        <input type="datetime-local" name="day">     
       <button type="submit">Add Workout</button>
-    </form>  
+    </form> 
+    <section>
+      <% profile.workouts.forEach(workout => { %>
+      <a href="/profiles/<%= profile._id %>/workouts/<%= workout._id %> ">
+        <%= workout.name %> 
+      </a>
+      <% }) %>
+    </section> 
   <% } %>
 </main>
 
