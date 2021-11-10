@@ -7,14 +7,14 @@
 <section>
   <h1>Exercises</h1>
   <% if (user) { %>
-   <h2> Add Exercise</h2>
-   <form action="/exercises" method="POST">
-     <label>
-       Name:
-       <input type="text" name="name" autocomplete="off">
-     </label>
-     <button type="submit">Add</button>
-   </form>
+  <h2> Add Exercise</h2>
+  <form action="/exercises" method="POST">
+    <label>
+      Name:
+      <input type="text" name="name" autocomplete="off">
+    </label>
+    <button type="submit">Add</button>
+  </form>
   <% } %>
   <h2>All Exercises</h2>
   <ul>

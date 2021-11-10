@@ -1,5 +1,11 @@
 import { Exercise } from '../models/exercise.js'
 
+function newExercise(req, res) {
+  res.render("exercises/new", {
+    title: "New Exercise"
+  })
+}
+
 function index(req, res){
   console.log('It works!')
   Exercise.find({})
@@ -46,6 +52,7 @@ function show(req, res) {
 
 
 export {
+newExercise as new,
 index,
 show,
 create,
