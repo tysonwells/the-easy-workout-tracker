@@ -7,9 +7,13 @@
 <main>
   <h1>Enter Exercise</h1>
   <form action="/exercises" method="POST">
-    <label>
-      <input type="text" name="name">
-    </label><br>
+    
+      <input type="text" name="name" placeholder="Exercise name">
+      <input type="number" name="set" placeholder="Sets">
+      <input type="text" name="weight" placeholder="Weight">
+      <input type="text" name='notes' placeholder="Notes">
+      <button type="submit">Add Exercise</button>
+    
   </form>
 </main>
 

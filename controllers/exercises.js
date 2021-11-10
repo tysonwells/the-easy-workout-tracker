@@ -57,8 +57,10 @@ function deleteExercise(req, res) {
   })
 }
 
-
-
+function edit(req, res) {
+  
+  
+}
 
 export {
 newExercise as new,
@@ -66,4 +68,5 @@ index,
 show,
 create,
 deleteExercise as delete,
+edit,
 }

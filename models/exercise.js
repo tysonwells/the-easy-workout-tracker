@@ -8,6 +8,10 @@ const exerciseSchema = new Schema({
   category: String,
   equipment: String,
   detail: String,
+  set: Number,
+  weight: Number,
+  notes: String,
+  date: {type: Date, default: Date.now},
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true

@@ -8,8 +8,7 @@ const workoutSchema = new mongoose.Schema({
     enum: ['Back Workout', 'Leg Workout', 'Arm Workout']
   },
   day: {
-    type: String,
-    enum: ['Monday', 'Wednesday', 'Friday']
+    type: Date
   },
 exercises: [{type: mongoose.Schema.Types.ObjectId, ref: 'Exercise'}]
 }, {

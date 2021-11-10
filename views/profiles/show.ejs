@@ -13,13 +13,19 @@
   <% } %>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
-    <h2>Add an Exercise</h2>
-    <form action="/profiles/<%= profile._id %>/exercises" method="POST">
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <button type="submit">Add Exercise</button>
+    <h2>Add Workout</h2>
+    <form action="/profiles/<%= profile._id %>/workouts" method="POST">
+    
+       
+        <input type="text" name="name" placeholder='Name 'autocomplete="off">
+        <select name="category">
+          <option value="Back Workout">Back Workout</option>
+          <option value="Leg Workout">Leg Workout</option>
+          <option value="Arm Workout">Arm Workout</option>          
+        </select>
+        <input type="datetime-local">
+     
+      <button type="submit">Add Workout</button>
     </form>  
   <% } %>
 </main>
