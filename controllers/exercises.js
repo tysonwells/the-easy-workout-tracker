@@ -1,3 +1,4 @@
+import e from 'express'
 import { Exercise } from '../models/exercise.js'
 
 function newExercise(req, res) {
@@ -48,6 +49,14 @@ function show(req, res) {
   })
 }
 
+function deleteExercise(req, res) {
+  console.log("deleting Exercise: ", req.params.id)
+  Exercise.findByIdAndDelete(req.params.id, function(err, exercise) {
+    console.log(exercise)
+    res.redirect("/exercises")
+  })
+}
+
 
 
 
@@ -56,4 +65,5 @@ newExercise as new,
 index,
 show,
 create,
+deleteExercise as delete,
 }

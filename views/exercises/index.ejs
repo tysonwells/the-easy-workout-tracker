@@ -12,6 +12,9 @@
     <% exercises.forEach(exercise => { %>
       <li>
         <a href="/exercises/<%= exercise._id %> "><%= exercise.name %></a>
+        <form action="/exercises/<%= exercise._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
       </li>
     <% }) %>
   </ul>
