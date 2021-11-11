@@ -1,10 +1,12 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
-	<p>From the gym of <%= exercise.owner.name %>...</p>
-  <h1><%= exercise.name %></h1>
+<section>  
   <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
+  <h1><%= exercise.name %></h1>
+  <h1><%= exercise.set %> </h1>
+  <h1><%= exercise.weight %> </h1>
+
 </section>
 
 <%- include('../partials/footer') %>
