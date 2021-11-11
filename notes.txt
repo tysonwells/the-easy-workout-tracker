@@ -1,14 +1,13 @@
-add a link to nav to take user to exercises/new.ejs
-make sure there is a route to /new
-build form to submit new exercises in new.ejs
-build controller to res.render exercises/new
-build controller and route to create exercises
-
-build route, controller and nav link to display list of exercises
 
 build delete to delete an exercise
 build edit to edit exercises
 
-allow user to create a workout from their profile page
+1.identify routes
+2. build UI
+3. build router
+4. build controller
+5. redirect back to exercises/index
 
-allow user to add exercises to workout
+pass exercise id in route for update and delete
+model off of flights or taco-cat
+

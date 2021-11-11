@@ -12,6 +12,8 @@ router.post('/:id/workouts', isLoggedIn, profilesCtrl.createWorkout)
 // localhost:3000/profiles/profileId/workouts/workoutId
 router.get('/:profileId/workouts/:workoutId', isLoggedIn, profilesCtrl.showWorkout)
 
+router.post('/:profileId/workouts/:workoutId/exercises', isLoggedIn, profilesCtrl.addExercise)
+
 // router.post("/:id/exercise", isLoggedIn, profilesCtrl.createExercise)
 
 export {

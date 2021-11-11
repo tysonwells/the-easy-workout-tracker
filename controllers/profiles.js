@@ -58,21 +58,37 @@ function showWorkout(req, res) {
   console.log(req.params.profileId)
   console.log(req.params.workoutId)
   Profile.findById(req.params.profileId)
+  .populate('workouts.exercises')
   .then((profile) => {
+    console.log(profile)
     const myWorkout = profile.workouts.find(workout => {
       return workout._id.equals(req.params.workoutId)
     })
   Exercise.find({}).then(function(exercises) {
+    console.log('My Workout', myWorkout)
     res.render('profiles/workout',{
       workout:myWorkout,
       title: 'Workout',
       exercises: exercises
     })
-
   })
   }) 
-  
+}
 
+function addExercise(req, res) {
+  Profile.findById(req.params.profileId)
+  .then((profile) => {
+    const myWorkout = profile.workouts.find(workout => {
+      return workout._id.equals(req.params.workoutId)
+    })
+    console.log(myWorkout)
+    console.log('req.body',req.body)
+    myWorkout.exercises.push(req.body.exerciseId)
+  profile.save()
+  .then(function() {
+    res.redirect(`/profiles/${profile._id}/workouts/${myWorkout._id}`)
+  })
+  })
 }
 
 export {
@@ -80,5 +96,6 @@ export {
   show,
   createExercise,
   createWorkout,
-  showWorkout
+  showWorkout,
+  addExercise,
 }

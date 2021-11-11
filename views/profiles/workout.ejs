@@ -9,12 +9,28 @@
   <form action="/profiles/<%= user.profile._id%>/workouts/<%= workout._id %>/exercises" method="POST">
     <select name="exerciseId">
       <% exercises.forEach(exercise => { %>
-        <option value="<%= exercise._id %> "><%= exercise.name %> </option>
+        <option value="<%= exercise._id %>"><%= exercise.name %> </option>
       <% }) %>
     </select>
     <button type="submit">Add Exercise</button>
   </form>
-
+  </section>
+  <section>
+    <h2>Workout Exercises</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Sets</th>
+        <th>Weight</th>
+      </tr>
+      <% workout.exercises.forEach(exercise => { %>
+        <tr>
+          <td> <%= exercise.name %> </td>
+          <td> <%= exercise.set %> </td>
+          <td> <%= exercise.weight %> </td>
+        </tr>
+    <% }) %>
+  </table>
   </section>
   
 </main>
