@@ -15,21 +15,25 @@
   <% if (isSelf) { %>
     <h2>Add Workout</h2>
     <form action="/profiles/<%= profile._id %>/workouts" method="POST">       
-        <input type="text" name="name" placeholder='Name 'autocomplete="off">
-        <select name="category">
-          <option value="Back Workout">Back Workout</option>
-          <option value="Leg Workout">Leg Workout</option>
-          <option value="Arm Workout">Arm Workout</option>                    
-        </select>
-        <input type="datetime-local" name="day">     
+      <input type="text" name="name" placeholder='Name 'autocomplete="off">
+      <select name="category">
+        <option value="Back Workout">Back Workout</option>
+        <option value="Leg Workout">Leg Workout</option>
+        <option value="Arm Workout">Arm Workout</option>                    
+      </select>
+      <input type="datetime-local" name="day">     
       <button type="submit">Add Workout</button>
     </form> 
     <section>
       <ul>
-      <% profile.workouts.forEach(workout => { %>
-      <a href="/profiles/<%= profile._id %>/workouts/<%= workout._id %> ">
-        <li><%= workout.name %></li>
-      </a>
+        <% profile.workouts.forEach(workout => { %>
+          <a href="/profiles/<%= profile._id %>/workouts/<%= workout._id %> ">
+            <li><%= workout.name %></li>
+              <form action="/profiles/<%= profile._id %>/workouts/<%= workout._id %>?_method=DELETE" method="POST">
+                <button>DELETE</button>
+              </form>      
+            
+          </a>
       <% }) %>
     </ul>
     </section> 

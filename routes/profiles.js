@@ -14,6 +14,8 @@ router.get('/:profileId/workouts/:workoutId', isLoggedIn, profilesCtrl.showWorko
 
 router.post('/:profileId/workouts/:workoutId/exercises', isLoggedIn, profilesCtrl.addExercise)
 
+router.delete('/:profileId/workouts/:workoutId', isLoggedIn, profilesCtrl.deleteWorkout)
+
 // router.post("/:id/exercise", isLoggedIn, profilesCtrl.createExercise)
 
 export {

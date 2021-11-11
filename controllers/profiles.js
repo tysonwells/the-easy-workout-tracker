@@ -70,8 +70,8 @@ function showWorkout(req, res) {
       workout:myWorkout,
       title: 'Workout',
       exercises: exercises
+      })
     })
-  })
   }) 
 }
 
@@ -91,6 +91,24 @@ function addExercise(req, res) {
   })
 }
 
+function deleteWorkout(req, res) {
+  console.log('Deleting workout')
+  // Profile.findById(req.params.profileId)
+  // .then((profile) => {
+  //   profile.workout.remove({_id:req.params.workoutId})
+  //   profile.save()
+  //   res.redirect(`/profiles/${profile._id}`)
+  // })
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.workouts.remove({_id: req.params.workoutId})
+    profile.save()
+    .then(()=> {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+ }
+
 export {
   index,
   show,
@@ -98,4 +116,5 @@ export {
   createWorkout,
   showWorkout,
   addExercise,
+  deleteWorkout,
 }
