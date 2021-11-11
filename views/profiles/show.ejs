@@ -25,11 +25,13 @@
       <button type="submit">Add Workout</button>
     </form> 
     <section>
+      <ul>
       <% profile.workouts.forEach(workout => { %>
       <a href="/profiles/<%= profile._id %>/workouts/<%= workout._id %> ">
-        <%= workout.name %> 
+        <li><%= workout.name %></li>
       </a>
       <% }) %>
+    </ul>
     </section> 
   <% } %>
 </main>
