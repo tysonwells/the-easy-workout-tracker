@@ -3,9 +3,19 @@
 
 <section>  
   <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
-  <h1><%= exercise.name %></h1>
-  <h1><%= exercise.set %> </h1>
-  <h1><%= exercise.weight %> </h1>
+</section>
+  <table>
+    <tr>
+      <th>Exercise</th>
+      <th>Sets</th>
+      <th>Reps</th>
+    </tr>
+    <tr>
+      <td> <%= exercise.name %> </td>
+      <td> <%= exercise.set %> </td>
+      <td> <%= exercise.weight %> </td>
+    </tr>
+  </table>
 
 </section>
 
