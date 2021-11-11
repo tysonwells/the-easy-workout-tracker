@@ -58,7 +58,14 @@ function deleteExercise(req, res) {
 }
 
 function edit(req, res) {
-  
+  console.log('Edit works')
+  Exercise.findById(req.params.id)
+  .then(exercise => {
+    res.render('exercises/edit', {
+      exercise,
+      title: "Edit Exercise"
+    })
+  })
   
 }
 

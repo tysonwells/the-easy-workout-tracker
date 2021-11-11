@@ -4,6 +4,7 @@
 <section>
 	<p>From the gym of <%= exercise.owner.name %>...</p>
   <h1><%= exercise.name %></h1>
+  <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
 </section>
 
 <%- include('../partials/footer') %>
