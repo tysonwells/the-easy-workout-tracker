@@ -9,3 +9,15 @@ It is simple, log in with your Google account and create your workout. You can c
 
 [Trello-Board](https://trello.com/b/8EnpHqtz/workout-tracker)
 
+![image](images/Screen%20Shot%202021-11-12%20at%207.57.59%20AM.png)
+
+## Technologies Used:
+* EJS
+* NodeJS
+* Mongoose
+* CSS
+
+## Next Steps:
+* improve layout and spacing
+* 
+
