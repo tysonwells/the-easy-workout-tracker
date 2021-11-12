@@ -1,13 +1,10 @@
 <%- include('../partials/html-head') %>
-
 <%- include('../partials/nav') %>
+
 <link rel='stylesheet' href='/stylesheets/style.css' />
-
-<h1>Edit Exercise</h1>
-
-<h1>Name: <%= exercise.name %> </h1>
+<h1><%= exercise.name %> </h1>
+<section>
 <form action="/exercises/<%= exercise._id %>?_method=PUT" method="POST">
-
   <label>
     Set:
     <input type="text" name="set" value=" <%= exercise.set %> ">
@@ -18,5 +15,6 @@
   </label>
   <button type="submit">Edit 🏋🏾</button>
 </form>
+</section>
 
 <%- include('../partials/footer') %>

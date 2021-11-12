@@ -36,35 +36,16 @@ nav {
   justify-content: center;
 }
 
-main {
+
+section {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-h1 {
-  font-size: 3rem;
+  vertical-align: middle;
+  margin-top: 30%;
 }
 
 
-p {
-  text-align: center;
-  font-size: 1.9rem;
-  padding: 25px
-}
-button{
-  border: 0;
-    padding: 0;
-    cursor: pointer;
-    height: 40px;
-    width: 100px;
-    color: rgb(24, 17, 17);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,1) 35%, rgba(255,255,255,1) 100%);
-    font-weight: bolder;
-    backdrop-filter: blur(16px) saturate(200%);
-    -webkit-backdrop-filter: blur(16px) saturate(200%);
-    background-color: rgba(0, 0, 0, 0.55);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.6);
-}
+
+

@@ -20,14 +20,10 @@
      <tbody>
        <% exercises.forEach(exercise => { %>
         <tr>
-          <td><a href="/exercises/<%= exercise._id %> "><%= exercise.name %></a>  </td>
-          <td><%= exercise.set %> </td>
+          <td><a href="/exercises/<%= exercise._id %> "><button><%= exercise.name %></button></a>  </td>
+          <td style="font-size: larger;"><%= exercise.set %> </td>
           <td><%= exercise.weight %> </td>
-          <td>
-            <form action="/exercises/<%= exercise._id %> ?_method=DELETE" method="POST">
-              <button>DELETE</button>
-            </form>  
-          </td>
+       
         </tr>
                     
         <% }) %>
