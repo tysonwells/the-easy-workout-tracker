@@ -14,6 +14,7 @@
         <tr>
           <th>Name</th>
           <th>Sets</th>
+          <th>Reps</th>
           <th>Weight</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
         <tr>
           <td><a href="/exercises/<%= exercise._id %> "><button><%= exercise.name %></button></a>  </td>
           <td style="font-size: larger;"><%= exercise.set %> </td>
+          <td><%= exercise.reps %> </td>
           <td><%= exercise.weight %> </td>
         </tr>                    
         <% }) %>
