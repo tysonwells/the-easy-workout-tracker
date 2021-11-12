@@ -1,13 +1,14 @@
 <%- include('../partials/html-head') %>
 
-<link rel="stylesheet" href="/stylesheets/exercises/index.css">
+<link rel="stylesheet" href="/stylesheets/main.css">
 
 <%- include('../partials/nav') %>
 
+<% if (user) { %>
+<% } %>
 <main>
+  <a href="/exercises/new">Create Exercise</a>
   <h1>Exercises</h1>
-  <% if (user) { %>
-  <% } %>
     <table>
       <thead>
         <tr>
@@ -17,15 +18,21 @@
         </tr>
      </thead>
      <tbody>
-      <% exercises.forEach(exercise => { %>
+       <% exercises.forEach(exercise => { %>
         <tr>
           <td><a href="/exercises/<%= exercise._id %> "><%= exercise.name %></a>  </td>
           <td><%= exercise.set %> </td>
-          <td><%= exercise.weight %> </td>        
+          <td><%= exercise.weight %> </td>
+          <td>
+            <form action="/exercises/<%= exercise._id %> ?_method=DELETE" method="POST">
+              <button>DELETE</button>
+            </form>  
+          </td>
         </tr>
-      <% }) %>
-    </tbody>
-  </table>
+                    
+        <% }) %>
+      </tbody>
+    </table>
 </main>
 
 <%- include('../partials/footer') %>

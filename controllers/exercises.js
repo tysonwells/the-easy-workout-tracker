@@ -50,11 +50,12 @@ function show(req, res) {
 }
 
 function deleteExercise(req, res) {
-  console.log("deleting Exercise: ", req.params.id)
-  Exercise.findByIdAndDelete(req.params.id, function(err, exercise) {
-    console.log(exercise)
-    res.redirect("/exercises")
-  })
+  // Exercise.findById
+  // console.log("deleting Exercise: ", req.params.id)
+  // Exercise.findByIdAndDelete(req.params.id, function(err, exercise) {
+  //   console.log(exercise)
+  //   res.redirect("/exercises")
+  // })
 }
 
 function edit(req, res) {
@@ -85,7 +86,7 @@ newExercise as new,
 index,
 show,
 create,
-deleteExercise as delete,
+deleteExercise,
 edit,
 update,
 }

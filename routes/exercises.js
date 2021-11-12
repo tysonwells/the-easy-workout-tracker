@@ -12,7 +12,7 @@ router.get('/:id', isLoggedIn, exercisesCtrl.show)
 
 router.post("/", isLoggedIn, exercisesCtrl.create)
 
-router.delete('/:id', isLoggedIn, exercisesCtrl.delete)
+router.delete('/:id', isLoggedIn, exercisesCtrl.deleteExercise)
 
 router.get('/:id/edit', isLoggedIn, exercisesCtrl.edit)
 
