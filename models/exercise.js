@@ -9,6 +9,7 @@ const exerciseSchema = new Schema({
   equipment: String,
   detail: String,
   set: Number,
+  reps: Number,
   weight: Number,
   notes: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}

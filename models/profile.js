@@ -9,7 +9,7 @@ const workoutSchema = new mongoose.Schema({
   },
   day: {
     type: Date,
-    default: new Date()
+    default: new Date(new Date().setFullYear(new Date().getFullYear()))
   },
 exercises: [{type: mongoose.Schema.Types.ObjectId, ref: 'Exercise'}]
 }, {

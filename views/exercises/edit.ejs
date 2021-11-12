@@ -6,8 +6,12 @@
 <section>
 <form action="/exercises/<%= exercise._id %>?_method=PUT" method="POST">
   <label>
-    Set:
+    Sets:
     <input type="text" name="set" value=" <%= exercise.set %> ">
+  </label>
+  <label>
+    Reps:
+    <input type="text" name="reps" value=" <%= exercise.reps %> ">
   </label>
   <label>
     Weight:

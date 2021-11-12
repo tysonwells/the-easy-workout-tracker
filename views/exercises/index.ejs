@@ -16,16 +16,14 @@
           <th>Sets</th>
           <th>Weight</th>
         </tr>
-     </thead>
-     <tbody>
-       <% exercises.forEach(exercise => { %>
+    </thead>
+    <tbody>
+      <% exercises.forEach(exercise => { %>
         <tr>
           <td><a href="/exercises/<%= exercise._id %> "><button><%= exercise.name %></button></a>  </td>
           <td style="font-size: larger;"><%= exercise.set %> </td>
           <td><%= exercise.weight %> </td>
-       
-        </tr>
-                    
+        </tr>                    
         <% }) %>
       </tbody>
     </table>

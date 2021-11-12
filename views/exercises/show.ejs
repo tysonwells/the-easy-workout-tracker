@@ -4,23 +4,28 @@
 
 <%- include('../partials/nav') %>
 
-<section>  
-  <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
-  <table>
-    <div>
-    <tr>
-      <th>Exercise</th>
-      <th>Sets</th>
-      <th>Reps</th>
-    </tr>
-    <tr>
-      <td> <%= exercise.name %> </td>
-      <td> <%= exercise.set %> </td>
-      <td> <%= exercise.weight %> </td>
-    </tr>
+<section>
+  <div> 
+    <a href="/exercises/<%= exercise._id %>/edit"><button>Edit Exercise</button></a>
   </div>
-  </table>
-
+  <table>
+    <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td> <%= exercise.name %> </td>
+          <td> <%= exercise.set %> </td>
+          <td> <%= exercise.reps %> </td>
+          <td> <%= exercise.weight %> </td>
+        </tr>
+      </tbody>
+    </table>
 </section>
 
 <%- include('../partials/footer') %>

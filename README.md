@@ -18,6 +18,6 @@ It is simple, log in with your Google account and create your workout. You can c
 * CSS
 
 ## Next Steps:
-* improve layout and spacing
+* improve layout
 * 
 
